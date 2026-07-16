@@ -1,0 +1,7 @@
+.venv
+.ipynb_checkpoints
+data/
+.env
+__pycache__
+
+housing_vector_db/

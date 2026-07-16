@@ -1,0 +1,6 @@
+{
+  "name": "AI House Recommendation",
+  "description": "Find homes using semantic AI search powered by embeddings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
