@@ -96,11 +96,39 @@ docker compose up --build
 
 ---
 
-## Evaluation
+## 📊 Evaluation
 
-MRR
-Hit Rate
-latency in ms
+The recommendation system was evaluated using a curated dataset consisting of **30 natural language property queries**. The dataset was generated using text-generation transformer. 
+
+### Evaluation Metrics
+
+| Metric                                             |        Score |
+| -------------------------------------------------- | -----------: |
+| **Hit Rate@5**                                     |    **93.3%** |
+| **Mean Reciprocal Rank (MRR)**                     |    **0.900** |
+| **Normalized Discounted Cumulative Gain (NDCG@5)** |   **0.9087** |
+| **Average Retrieval Latency**                      | **67.19 ms** |
+
+### Metric Descriptions
+
+* **Hit Rate@5** measures the percentage of queries where the expected property appears within the top five recommendations.  
+* **Mean Reciprocal Rank (MRR)** evaluates how highly the first relevant property is ranked, with higher values indicating that relevant results are returned earlier.  
+* **Average Retrieval Latency** represents the mean response time required to generate recommendations for a query.  
+* **Normalized Discounted Cumulative Gain (NDCG@5)** measures the overall quality of the ranking by rewarding relevant properties that appear closer to the top of the recommendation list.  
+
+
+### Error Analysis
+
+A qualitative analysis of the evaluation results identified the following types of retrieval errors:
+
+* **Ranking Errors:** In some cases, the correct property was retrieved but ranked second instead of first because multiple listings shared highly similar descriptions.
+* **Query Ambiguity:** Generic queries (e.g., "What's the rent in this apartment?") lacked sufficient contextual information, making it difficult for the retrieval model to identify the intended property.
+* **Metadata Limitations:** Location-specific queries occasionally retrieved semantically similar properties from different locations, indicating that incorporating structured metadata filters (e.g., city or state) could further improve retrieval accuracy.
+
+Overall, the evaluation demonstrates that the semantic recommendation pipeline is capable of retrieving relevant properties with high ranking quality while maintaining low retrieval latency.  
+
+Future improvements include hybrid semantic-keyword retrieval, enhanced metadata filtering, and reranking techniques to further improve recommendation precision.
+
 
 
 ---
