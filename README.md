@@ -4,6 +4,8 @@ An intelligent, semantic-search-enabled house recommendation system built using 
 
 Instead of matching strict keywords, this system leverages **SentenceTransformers** and **ChromaDB** to understand the *meaning* and *context* behind user searches (e.g., matching "cozy woodland cabin" with "rustic cottage surrounded by pines") while respecting hard filters such as price limits and minimum bedroom counts.
 
+![img](https://github.com/meemeealm/semantic-house-recommender/blob/main/image.png)
+
 ---
 
 ## Key Features
